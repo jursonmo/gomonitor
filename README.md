@@ -1,2 +1,2 @@
 #### gomonitor
-go runtime monitor
+go runtime monitor:  app(expvar) + telegraf plugins inputs + grafana 
