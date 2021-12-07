@@ -21,6 +21,7 @@ var h = expvar.Handler()
 var cpuNum = expvar.NewInt("cpuNum")
 var threadNum = expvar.NewInt("threadNum")
 var grNum = expvar.NewInt("goroutineNum")
+var serial = expvar.NewString("serial")
 var threadProfile = rtpprof.Lookup("threadcreate")
 
 var p, _ = process.NewProcess(int32(os.Getpid()))
@@ -28,6 +29,8 @@ var memPercent = expvar.NewInt("memPercent")
 var cpuPercent = expvar.NewInt("cpuPercent")
 
 func exp(w http.ResponseWriter, req *http.Request) {
+	serial.Set("xxxxxxxx")
+
 	cpuNum.Set(int64(runtime.NumCPU()))
 	threadNum.Set(int64(threadProfile.Count()))
 	grNum.Set(int64(runtime.NumGoroutine()))
