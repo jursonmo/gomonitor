@@ -42,7 +42,7 @@ type GoRuntime struct {
 }
 
 var sampleConfig = `
-# Read formatted metrics from one or more cloudswitch endpoints
+# Read formatted metrics from one or more xxx endpoints
 [[inputs.goruntime]]
   ## One or more URLs from which to read formatted metrics
   urls = ["http://localhost:8062/debug/vars"]
